@@ -1,7 +1,7 @@
 export const accordionData = [
   {
     heading: 'How many team members can I invite?',
-    content: '2'
+    content: "Let's go Mortyyyyyyyy"
   },
   {
     heading: 'What is the maximum file upload size?',
@@ -9,14 +9,14 @@ export const accordionData = [
   },
   {
     heading: 'How do I reset my password',
-    content: 'email'
+    content: 'Submit your favorite song.'
   },
   {
     heading: 'How can I cancel my subscription?',
-    content: 'do it'
+    content: 'You must pay the cancellation fee.'
   },
   {
     heading: 'Do you provide additional support?',
-    content: 'nope'
+    content: "Nuh uh uh... you didn't say the magic word"
   }
 ]

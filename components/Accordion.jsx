@@ -2,32 +2,33 @@ import DownArrow from '../public/images/icon-arrow-down.svg'
 import { useState } from 'react'
 
 const Accordion = ({ heading, content }) => {
-  const [isActive, setIsActive] = useState(false)
+  const [active, setActive] = useState(false)
 
   return (
-    <li className='accordion-item list-none flex flex-col justify-center item-center'>
-      <div className='accordion-toggle cursor-pointer' onClick={() => setIsActive(!isActive)}>
-        <div className='flex justify-between pr-10 items-center  space-y-7 space-x-12'>
-          <div className='hover:text-Softred'>
-            {isActive ? (
-              <h3 className='text-Verydarkdesaturatedblue font-bold text-[14px]'>{heading}</h3>
-            ) : (
-              <h3 className='border-opacity-10 hover:text-Softred pb-4 border-Darkgrayishblue border-b-[1px]'>
-                {heading}
-              </h3>
-            )}
+    <li className=''>
+      <div
+        className='flex justify-between items-center border-b-[1px] pb-4 border-opacity-10 border-Darkgrayishblue cursor-pointer '
+        onClick={() => setActive(!active)}
+      >
+        {active ? (
+          <div className=''>
+            <h3 className='text-Verydarkdesaturatedblue font-bold text-sm'>{heading}</h3>
+            <p className='pt-2 text-xs text-Darkgrayishblue leading-5 '>{content}</p>
           </div>
-          <div className='pb-6'>
-            {isActive ? <DownArrow className='rotate-180' /> : <DownArrow className='' />}
+        ) : (
+          <div>
+            <h3 className=' hover:text-Softred text-sm'>{heading}</h3>
           </div>
-        </div>
-        <div className='w-full h-full flex flex-col'>
-          {isActive && (
-            <div className='accordion-content text-Darkgrayishblue font-KumbhSans text-xs items-center justify-center border-b-[1px] border-opacity-10 pb-2 border-Darkgrayishblue '>
-              {content}
-            </div>
-          )}
-        </div>
+        )}
+        {active ? (
+          <div>
+            <DownArrow className='rotate-180 transition-all ease-in-out duration-300 ml-1' />
+          </div>
+        ) : (
+          <div>
+            <DownArrow />
+          </div>
+        )}
       </div>
     </li>
   )
